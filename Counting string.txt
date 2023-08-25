@@ -1,0 +1,86 @@
+package main
+
+import "fmt"
+
+func main() {
+	word := "hello world"
+	counter := map[rune]int{}
+
+	for _, d := range word {
+		counter[d]++
+	}
+
+	seen := map[rune]bool{}
+	for _, c := range word {
+		if seen[c] {
+			continue
+		}
+		seen[c] = true
+
+		fmt.Printf("letter: %c count: %d\n", c, counter[c])
+	}
+
+
+}
+
+
+Explain :
+
+   for _, c := range word {
+		counter[c]++
+	}
+
+    1. When encountering the character 'h':
+
+       The map counter doesn't have a key 'h' yet, so it creates a new entry with key 'h' and initializes its value to 0.
+      The expression counter['h']++ increments the value associated with key 'h' by 1.
+
+   2. When encountering the character 'e':
+
+
+       the map counter doesn't have a key 'e', so it creates a new entry with key e' and initializes its value to 0.
+       The expression counter['e']++ increments the value associated with key 'e' by 1
+
+   3. When encountering the character 'l': 
+     When encountering the character 'l' (first occurrence):
+     As before, the map counter doesn't have a key 'l', so it creates a new entry with key 'l' and initializes its value to 0.
+     The expression counter['l']++ increments the value associated with key 'l' by 1.
+
+  4. When encountering the character 'l' (second occurrence):
+
+       The key 'l' already exists in the map, and its value is currently 1.
+       The expression counter['l']++ increments the value associated with key 'l' by 1, making it 2. 
+
+next process :
+
+
+    seen := map[rune]bool{}
+	for _, c := range word {
+		if seen[c] {
+			continue
+		}
+		seen[c] = true
+
+ For 'h':
+
+seen['h'] is not true (false), so the character is not seen.
+Set seen['h'] = true.
+Print "letter: h count: 1" (using counter['h'] which is 1).  
+      
+For 'e':
+
+seen['e'] is not true (false), so the character is not seen.
+Set seen['e'] = true.
+Print "letter: e count: 1" (using counter['e'] which is 1).
+
+
+For the first 'l':
+
+seen['l'] is not true (false), so the character is not seen.
+Set seen['l'] = true.
+Print "letter: l count: 3" (using counter['l'] which is 3).
+
+
+For the second 'l':
+
+seen['l'] is true, so the character has been seen before, and we continue to the next iteration.  whcich mean skip the this 'l'
