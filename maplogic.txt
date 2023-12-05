@@ -1,0 +1,67 @@
+package main
+
+import (
+	"fmt"
+	"sort"
+)
+
+func searchMap(m map[string]int, key string) (int, bool) {
+	// Searching for a key in the map
+	value, found := m[key]
+	return value, found
+}
+
+func swapMap(m map[string]int, key1, key2 string) {
+	// Swapping values for two keys in the map
+	m[key1], m[key2] = m[key2], m[key1]
+}
+
+func sortMapByKey(m map[string]int) []string {
+	// Sorting the keys of the map
+	var keys []string
+	for key := range m {
+		keys = append(keys, key)
+	}
+	sort.Strings(keys)
+	return keys
+}
+
+func reverseMap(m map[string]int) map[int]string {
+	// Reversing the map by swapping keys and values
+	reversed := make(map[int]string, len(m))
+	for key, value := range m {
+
+		reversed[value] = key
+		//reversed[strconv.Itoa(value)] = key
+	}
+	return reversed
+}
+
+func main() {
+	a := map[string]int{
+		"Vijay": 20,
+		"Raj":   30,
+		"malar": 40,
+	}
+
+	// Searching
+	value, found := searchMap(a, "Raj")
+	if found {
+		fmt.Printf("Value for key 'Raj': %d\n", value)
+	} else {
+		fmt.Println("Key 'Raj' not found")
+	}
+
+	// Swapping
+	fmt.Println("Map before swapping:", a)
+	swapMap(a, "Vijay", "Raj")
+	fmt.Println("Map after swapping:", a)
+
+	// Sorting
+	sortedKeys := sortMapByKey(a)
+	fmt.Println("Sorted keys:", sortedKeys)
+
+	// Reversing
+	reversed := reverseMap(a)
+	fmt.Println("Reversed map:", reversed)
+}
