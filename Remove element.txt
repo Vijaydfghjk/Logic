@@ -1,0 +1,32 @@
+// You can edit this code!
+// Click here and start typing.
+package main
+
+import "fmt"
+
+func removeElement(nums []int, val int) int {
+
+	var k int
+	for i := 0; i < len(nums); i++ {
+
+		if nums[i] != val {
+
+			nums[k] = nums[i]
+			k++
+		}
+
+	}
+
+	//fmt.Println(nums[:k])
+
+	return k
+}
+
+func main() {
+
+	a := []int{3, 2, 2, 3}
+	val := 3
+	b := removeElement(a, val)
+
+	fmt.Println(b)
+}
