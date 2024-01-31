@@ -1,0 +1,25 @@
+package main
+
+import "fmt"
+
+func removeDuplicates(arr []int) []int {
+	encountered := map[int]bool{}
+	result := []int{}
+
+	for v := range arr {
+		if encountered[arr[v]] == false {
+			encountered[arr[v]] = true
+			result = append(result, arr[v])
+		}
+	}
+
+	return result
+}
+
+func main() {
+	arr := []int{7, 3, 7, 2, 1}
+	fmt.Println("Original array:", arr)
+
+	arr = removeDuplicates(arr)
+	fmt.Println("Array after removing duplicates:", arr)
+}
