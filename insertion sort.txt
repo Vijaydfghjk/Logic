@@ -1,0 +1,26 @@
+package main
+
+import "fmt"
+
+func sort(arr []int) {
+
+	for i := 1; i < len(arr); {
+
+		j := i
+		for j >= 1 && arr[j] < arr[j-1] {
+
+			arr[j], arr[j-1] = arr[j-1], arr[j]
+			j--
+		}
+
+		i++
+	}
+	fmt.Println(arr)
+}
+
+func main() {
+
+	a := []int{-10, 8, 3, 1}
+	sort(a)
+
+}
