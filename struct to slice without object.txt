@@ -1,0 +1,37 @@
+// You can edit this code!
+// Click here and start typing.
+package main
+
+import "fmt"
+
+type Demo struct {
+	name string
+	age  string
+}
+
+type dum struct {
+	val []Demo
+}
+
+func (a *dum) add(m Demo) Demo {
+
+	a.val = append(a.val, m)
+
+	return m
+}
+
+func (a *dum) call() []Demo {
+
+	return a.val
+}
+
+func main() {
+
+	m := Demo{name: "Vijay", age: "25"}
+
+	var Vj dum
+	Vj.add(m)
+	k := Vj.call()
+
+	fmt.Println(k)
+}
