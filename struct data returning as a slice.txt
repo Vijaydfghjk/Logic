@@ -1,0 +1,36 @@
+package main
+
+import "fmt"
+
+type Data struct {
+	name string
+	age  string
+}
+
+type All interface {
+	Get(a, b string) []Data
+}
+
+type king struct {
+	val []Data
+}
+
+func (p *king) Get(a, b string) []Data {
+
+	dummy := Data{a, b}
+	p.val = append(p.val, dummy)
+
+	return p.val
+}
+
+func main() {
+
+	var my All
+
+	var vj king
+
+	my = &vj
+	a := my.Get("Vijay", "25")
+
+	fmt.Println(a)
+}
