@@ -1,0 +1,30 @@
+package main
+
+import "fmt"
+
+func Demo(a string) string {
+
+	k := map[rune]bool{}
+	unique := ""
+
+	for _, v := range a {
+
+		if k[v] {
+
+			continue
+		}
+
+		k[v] = true
+		unique += string(v)
+
+	}
+
+	return unique
+}
+func main() {
+
+	R := Demo("Viinaay")
+
+	fmt.Println(R)
+
+}
