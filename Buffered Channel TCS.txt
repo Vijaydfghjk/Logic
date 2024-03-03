@@ -1,0 +1,32 @@
+package main
+
+import "fmt"
+
+func Demo(a chan int) {
+
+	for k := range a {
+		if k%2 == 0 {
+
+			fmt.Printf("%d is Even number\n", k)
+		} else {
+
+			fmt.Printf("%d is odd number\n", k)
+		}
+	}
+}
+
+func main() {
+
+	var a chan int = make(chan int, 10)
+	go func() {
+		for i := 0; i < 10; i++ {
+
+			a <- i
+
+		}
+		close(a)
+	}()
+
+	Demo(a)
+
+}

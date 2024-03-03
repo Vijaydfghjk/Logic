@@ -1,0 +1,36 @@
+
+** Un buffered channel**
+package main
+
+import "fmt"
+
+func Demo(k int) {
+
+	if k%2 == 0 {
+
+		fmt.Printf("%d is Even number\n", k)
+	} else {
+
+		fmt.Printf("%d is odd number\n", k)
+	}
+
+}
+
+func main() {
+
+	var a chan int = make(chan int)
+	go func() {
+		for i := 0; i < 10; i++ {
+
+			a <- i
+
+		}
+		close(a)
+	}()
+	for j := range a {
+
+		Demo(j)
+
+	}
+
+}
