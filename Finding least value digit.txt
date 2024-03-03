@@ -1,0 +1,31 @@
+package main
+
+import (
+	"fmt"
+	"strconv"
+)
+
+func Demo(a int) {
+
+	c := strconv.Itoa(a) // strconv.Itoa(a) returning string
+	size := len(c)
+
+	var k string = ""
+	for i := 0; i < a; i++ {
+
+		k = strconv.Itoa(i)
+
+		if len(k) == size {
+			fmt.Println(k)
+			break
+
+		}
+	}
+
+}
+
+func main() {
+
+	Demo(50)
+
+}
