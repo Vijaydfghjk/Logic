@@ -1,0 +1,42 @@
+package main
+
+import (
+	"fmt"
+	"strconv"
+)
+
+func Demo(a string) {
+	k := len(a)
+
+	for i := 0; i < k; i++ {
+
+		if a[i] >= 48 && a[i] <= 57 {
+
+			s := string(a[i])
+
+			val, err := strconv.Atoi(s)
+
+			if err != nil {
+
+				fmt.Println(err)
+			} else {
+
+				fmt.Printf("%v Type is %T\n", val, val)
+			}
+
+		} else {
+
+			m := string(a[i])
+
+			fmt.Printf("%v Type is %T\n", m, m)
+		}
+
+	}
+
+}
+
+func main() {
+
+	Demo("2010aaccc33kk")
+
+}
