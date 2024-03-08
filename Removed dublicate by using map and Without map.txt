@@ -1,0 +1,73 @@
+package main
+
+import "fmt"
+
+func Demo(arr []int) []int {
+
+	dummy := []int{}
+
+	for _, k := range arr {
+
+		if !Dum(dummy, k) {
+
+			dummy = append(dummy, k)
+		}
+
+	}
+
+	return dummy
+}
+
+func Dum(uni []int, num int) bool {
+
+	for _, v := range uni {
+
+		if v == num {
+
+			return true
+		}
+	}
+
+	return false
+}
+
+func main() {
+
+	var v []int = []int{20, 10, 10, 30, 20, 10, 40, 50, 20}
+	k := Demo(v)
+	fmt.Println(k)
+
+}
+
+
+*******************************************************************
+
+package main
+
+import "fmt"
+
+func Demo(arr []int) []int {
+	dummy := []int{}
+	k := map[int]bool{}
+
+	for _, v := range arr {
+
+		if k[v] != true {
+
+			k[v] = true
+			dummy = append(dummy, v)
+		}
+
+	}
+	return dummy
+}
+
+func main() {
+
+	val := []int{10, 20, 20, 10, 30, 10, 10, 10}
+	data := Demo(val)
+	fmt.Println(data)
+
+}
+
+
