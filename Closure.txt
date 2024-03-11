@@ -1,0 +1,30 @@
+package main
+
+import (
+	"fmt"
+)
+
+func Demo(b int) (int, func(int) (int, error)) {   //  Demo(b int) returning two value one is int, another is func(int) (int, error)
+
+	fmt.Printf("Hi I'm from Demo function %d !\n", b)
+	return b, func(a int) (int, error) {
+
+		fmt.Println("From myvalue function accessing the Demo", b)
+		return a, nil
+	}
+
+}
+
+func main() {
+	m, myvalue := Demo(15)
+	fmt.Println("Demo returning ", m)
+	k, err := myvalue(10)
+	if err != nil {
+
+		fmt.Println(err)
+	} else {
+
+		fmt.Println("Returning the value from myvalue", k)
+	}
+
+}
