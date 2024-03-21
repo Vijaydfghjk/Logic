@@ -1,0 +1,46 @@
+package main
+
+import "fmt"
+
+func Demo(a []int) int {
+
+	for i := 0; i < len(a); i++ {
+
+		j := i
+		for j >= 1 && a[j-1] > a[j] {
+
+			a[j-1], a[j] = a[j], a[j-1]
+			j--
+		}
+
+	}
+
+	fmt.Println(a)
+
+	if len(a) == 0 {
+
+		return 0
+	}
+
+	var k int = 1
+
+	for i := 1; i < len(a); i++ {
+
+		if a[i] != a[i-1] {
+
+			a[k] = a[i]
+			k++
+		}
+
+	}
+	return k
+}
+
+func main() {
+
+	b := []int{5, 1, 5, 6, 0, 1}
+
+	v := Demo(b)
+
+	fmt.Println("Counting the unique value :", v)
+}
