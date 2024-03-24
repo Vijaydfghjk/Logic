@@ -1,0 +1,39 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	n := 5
+	for i := n; i >= 1; i-- {
+		for j := 1; j <= n-i; j++ { // i = 3 5-3 = 2 time space
+			fmt.Print(" ")
+		}
+		for k := 1; k <= 2*i-1; k++ { // i=3 3*2 =6 -1 = 5 time printing
+			fmt.Print("*")
+		}
+		fmt.Println()
+	}
+}
+
+ ************** Pattern*********************
+
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	n := 5
+	for i := 1; i <= n; i++ {
+		for j := 1; j <= n-i; j++ { // i = 3 5-3 = 2 time space
+			fmt.Print(" ")
+		}
+		for k := 1; k <= 2*i-1; k++ { // i=3 3*2 =6 -1 = 5 time printing
+			fmt.Print("*")
+		}
+		fmt.Println()
+	}
+}
