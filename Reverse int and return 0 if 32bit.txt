@@ -1,0 +1,38 @@
+package main
+
+import "fmt"
+
+// time complexity: O(log 10 x ) = O(log x)
+// space complexity: O(1)
+func reverse(x int) int {
+	if 0 == x {
+		return x
+	}
+
+	isPositive := true
+	if x < 0 {
+		isPositive = false
+		x *= -1
+	}
+
+	res := 0
+
+	for x > 0 {
+		res = res*10 + x%10
+		x /= 10
+	}
+
+	if !isPositive {
+		res *= -1
+	}
+
+	
+	return res
+}
+
+func main() {
+
+	value := reverse(7767676767676767676)
+	fmt.Println(value)
+
+}
