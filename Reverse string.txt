@@ -20,3 +20,34 @@ func main() {
 	fmt.Printf("%s\n", R2)
 
 }
+
+/*
+
+
+
+package main
+
+import "fmt"
+
+func Reverse(a string) string {
+
+	c := 0
+	d := len(a) - 1
+
+	data := []byte(a)
+
+	for c < d {
+
+		data[c], data[d] = data[d], data[c]
+		c++
+		d--
+	}
+	return string(data)
+}
+
+func main() {
+
+	value := Reverse("Vijay")
+	fmt.Println(value)
+}
+*/
