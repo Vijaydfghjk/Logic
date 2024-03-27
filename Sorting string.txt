@@ -1,0 +1,30 @@
+package main
+
+import (
+	"fmt"
+)
+
+func Demo(a string) {
+
+	val := []byte(a)
+	fmt.Println(val)
+	for i := 0; i < len(a); i++ {
+
+		for j := i + 1; j < len(a); j++ {
+
+			if val[i] > val[j] {
+
+				val[i], val[j] = val[j], val[i]
+			}
+		}
+
+	}
+	fmt.Println(val)
+	fmt.Println(string(val))
+}
+
+func main() {
+
+	Demo("dcba")
+
+}
