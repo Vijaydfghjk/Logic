@@ -4,21 +4,19 @@ import "fmt"
 
 func majorityElement(nums []int) int {
 
-	k := 1
-	for i := 0; i < len(nums); i++ {
+	key := make(map[int]int)
+    for _, n := range nums {key[n]++}
 
-		for j := i + 1; j < len(nums); j++ {
+    res := 0
+    max := 0
+    for i, n := range key {
+        if n > max {
+            max = n
+            res = i
+        }
+    }
 
-			if nums[i] == nums[j] {
-
-				k = nums[i]
-			}
-
-		}
-
-	}
-
-	return k
+    return res
 
 }
 
