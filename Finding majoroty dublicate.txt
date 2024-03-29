@@ -1,0 +1,31 @@
+package main
+
+import "fmt"
+
+func majorityElement(nums []int) int {
+
+	k := 1
+	for i := 0; i < len(nums); i++ {
+
+		for j := i + 1; j < len(nums); j++ {
+
+			if nums[i] == nums[j] {
+
+				k = nums[i]
+			}
+
+		}
+
+	}
+
+	return k
+
+}
+
+func main() {
+
+	b := []int{2, 2, 1, 1, 1, 2, 2}
+	value := majorityElement(b)
+	fmt.Println(value)
+
+}
