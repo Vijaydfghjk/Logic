@@ -1,0 +1,30 @@
+package main
+
+import "fmt"
+
+func apps(start int, end int) {
+
+	val := []byte{}
+	for i := start; i < end; i++ {
+
+		if i%2 != 0 {
+
+			val = append(val, byte(i))
+		}
+
+	}
+
+	value := string(val)
+
+	for _, v := range value {
+
+		fmt.Println(string(v))
+	}
+
+}
+
+func main() {
+
+	apps(65, 90)
+
+}
