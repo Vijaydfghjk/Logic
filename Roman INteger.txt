@@ -1,0 +1,87 @@
+// You can edit this code!
+// Click here and start typing.
+package main
+
+import "fmt"
+
+func romanToInt(s string) int {
+
+	if 0 == len(s) {
+
+		return 0
+	}
+
+	digit := map[string]int{"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+
+	sum := digit[string(s[len(s)-1])]
+
+	for i := len(s) - 1; i > 0; i-- {
+
+		cur := digit[string(s[i])]
+		pre := digit[string(s[i-1])]
+
+		if cur > pre {
+
+			sum -= pre
+		} else {
+
+			sum += pre
+
+		}
+
+	}
+	return sum
+}
+func main() {
+
+	val := romanToInt("MCIV")
+
+	fmt.Println(val)
+
+}
+
+
+MCIV
+
+l = 4
+
+sum = 5
+
+
+i = 3
+
+
+
+ cur 5
+ pre 1
+
+cur > pre{
+
+   sum = 4
+}
+
+
+i = 2
+
+cur = 1
+
+pre = 100
+
+cur > pre{
+
+  false 
+}
+
+sum = 104
+
+
+i =1
+
+
+cur = 100
+pre = 1000
+
+cur > pre 
+
+false 
+
