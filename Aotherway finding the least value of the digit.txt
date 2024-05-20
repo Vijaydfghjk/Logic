@@ -1,0 +1,40 @@
+// You can edit this code!
+// Click here and start typing.
+package main
+
+import (
+	"fmt"
+	"strconv"
+)
+
+func Demo(s string) {
+
+	n := ""
+	d := ""
+	for i := 0; i < len(s); i++ {
+
+		if s[i] >= 49 && s[i] <= 57 { // finfing 1,9
+
+			n = string(s[i])
+		} else if s[i] >= 48 { // finfing 0
+
+			d += string(s[i])
+		}
+
+	}
+	temp := n // stroring string
+	n += d
+	nvalue, _ := strconv.Atoi(n)
+
+	value, _ := strconv.Atoi(temp) // finding 4 returning int
+	value = value - 1              // 4
+	c := strconv.Itoa(value)       // returning string
+	c += d                         // 400
+	value2, _ := strconv.Atoi(c)
+	fmt.Println(nvalue - value2)
+
+}
+func main() {
+
+	Demo("2000")
+}
