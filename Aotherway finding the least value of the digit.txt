@@ -4,37 +4,48 @@ package main
 
 import (
 	"fmt"
+
 	"strconv"
 )
 
-func Demo(s string) {
+func Demo(n int) {
 
-	n := ""
-	d := ""
-	for i := 0; i < len(s); i++ {
+	k := strconv.Itoa(n)
+	val := ""
+	temp := ""
 
-		if s[i] >= 49 && s[i] <= 57 { // finfing 1,9
+	for i := 0; i < len(k)-1; i++ {
 
-			n = string(s[i])
-		} else if s[i] >= 48 { // finfing 0
+		temp += "0"
 
-			d += string(s[i])
+	}
+
+	for j := 0; j < 1; j++ {
+
+		if k[j] >= 49 && k[j] <= 57 {
+
+			val = string(k[j])
+
 		}
 
 	}
-	temp := n // stroring string
-	n += d
-	nvalue, _ := strconv.Atoi(n)
 
-	value, _ := strconv.Atoi(temp) // finding 4 returning int
-	value = value - 1              // 4
-	c := strconv.Itoa(value)       // returning string
-	c += d                         // 400
-	value2, _ := strconv.Atoi(c)
-	fmt.Println(nvalue - value2)
+	getnum := val + temp        // 500
+	num, _ := strconv.Atoi(val) // retuning int
+	num = num - 1
+	f := strconv.Itoa(num) // retuning string
 
+	getstr := f + temp
+	//fmt.Println(getstr)
+
+	num1, _ := strconv.Atoi(getnum)
+	num2, _ := strconv.Atoi(getstr)
+
+	fmt.Println(num1 - num2)
 }
+
 func main() {
 
-	Demo("2000")
+	Demo(251)
+
 }
