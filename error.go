@@ -14,7 +14,7 @@ func FirstFunc(v interface{}) (interface{}, error) {
 	var ok bool // no value so false.
 
 	if !ok {
-		return nil, errors.New("false error s ")
+		return nil, errors.New("false errors for log")
 	}
 	return v, nil
 }
@@ -22,7 +22,7 @@ func FirstFunc(v interface{}) (interface{}, error) {
 // SecondFunc method
 func SecondFunc() {
 	defer func() {
-		//var da interface{}         
+		//var da interface{}
 		if da := recover(); da != nil {
 			fmt.Println("recovering error ", da)
 		}
@@ -43,9 +43,8 @@ func main() {
 	fmt.Println("The execution ended")
 }
 
-
 /*
-    var da interface{}   
+    var da interface{}
    purpose of interface.
 
     When you use panic(), you can provide any value as an argument.This value can be of any type, even custom types you've defined.
@@ -55,4 +54,3 @@ func main() {
 
 
 */
-
