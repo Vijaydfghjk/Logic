@@ -1,0 +1,38 @@
+// You can edit this code!
+// Click here and start typing.
+
+/*
+
+
+An anonymous function is a function that does not have a name.
+we can assign to the variable and use when it is needed
+
+*/
+
+package main
+
+import "fmt"
+
+func demo() {
+
+	func() {
+
+		fmt.Println("hello there ")
+	}()
+}
+
+func main() {
+
+	demo()
+
+	var factorial func(n int) int
+
+	factorial = func(n int) int {
+
+		if n == 0 {
+			return 1
+		}
+		return n * factorial(n-1)
+	}
+	fmt.Println(factorial(5))
+}

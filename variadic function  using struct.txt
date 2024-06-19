@@ -1,0 +1,34 @@
+// You can edit this code!
+// Click here and start typing.
+
+// variadic function
+
+// here struct consider as slice 
+
+
+// A variadic function in Golang is a function that can be called with any number //of arguments.
+package main
+
+import "fmt"
+
+type demo struct {
+	name string
+}
+
+func main() {
+
+	var vj demo = demo{name: "Vijay"}
+	var v1 demo = demo{name: "Ram"}
+	myfun(vj, v1)
+}
+
+func myfun(value ...demo) {
+
+	for _, get := range value {
+
+		fmt.Println(get.name)
+	}
+
+
+
+}
