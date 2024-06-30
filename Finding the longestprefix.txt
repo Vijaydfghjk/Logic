@@ -1,0 +1,28 @@
+// You can edit this code!
+// Click here and start typing.
+package main
+
+import "fmt"
+
+func demo(strs []string) string {
+
+	p := strs[0]
+	for _, s := range strs {
+
+		i := 0
+
+		for ; i < len(s) && i < len(p) && s[i] == p[i]; i++ {
+		}
+		p = p[:i]
+	}
+	return p
+}
+
+func main() {
+
+	strs := []string{"vij", "vij", "vik", "vikekeke", "vija"}
+
+	get := demo(strs)
+	fmt.Println(get)
+
+}
