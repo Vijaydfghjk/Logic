@@ -1,0 +1,91 @@
+Finding the unique string
+package main
+
+import "fmt"
+
+func main() {
+
+	val := "Viiiiijjjjayy"
+
+	var seen map[rune]bool = make(map[rune]bool)
+
+	for _, v := range val {
+
+		if seen[v] {
+
+			continue
+		}
+		seen[v] = true
+
+		fmt.Printf("Unique value %s\n", string(v))
+	}
+
+}
+
+***************************************************************************************
+Find the string count
+package main
+
+import "fmt"
+
+func main() {
+
+	val := "Viiiiijjjjayy"
+
+	var count map[rune]int = make(map[rune]int)
+
+	for _, v := range val {
+
+		count[v]++
+	}
+
+	for i, get := range count {
+
+		fmt.Printf("value is %s count is %d\n", string(i), get)
+
+	}
+
+}
+
+*******************************************
+Finding the maximum dunlicate count
+
+package main
+
+import "fmt"
+
+func main() {
+	max := 0
+	min := 2
+	val := "Viiiiijjjjay"
+
+	var count map[rune]int = make(map[rune]int)
+
+	for _, v := range val {
+
+		count[v]++
+	}
+
+	for _, get := range count {
+
+		if max < get {
+
+			max = get
+		}
+
+		if min > get {
+
+			min = get
+		}
+
+	}
+	//fmt.Println(min)
+	for i, v := range count {
+
+		if v == max && v == min {
+			fmt.Printf("Maximum dublicate word is %s count is %d", string(i), v)
+			fmt.Printf("Minimum dublicate word is %s count is %d", string(i), min)
+		}
+	}
+
+}
