@@ -1,0 +1,23 @@
+package main
+
+import "fmt"
+
+func Demo(value []int, target int) {
+
+	temp := []int{}
+
+	temp = append(value[:target], value[target+1:]...)
+	fmt.Println(temp)
+
+}
+
+func main() {
+
+	arr := []int{
+
+		15, 14, 11, 8,
+	}
+
+	Demo(arr, 2)
+
+}
