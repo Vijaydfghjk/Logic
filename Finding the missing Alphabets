@@ -1,0 +1,41 @@
+// You can edit this code!
+// Click here and start typing.
+package main
+
+import "fmt"
+
+func Demo(arr []string) []string {
+
+	fmt.Println(arr)
+
+	//var char string
+	myval := []byte{}
+	for i := 0; i < len(arr); i++ {
+
+		bytes := []byte(arr[i])
+
+		myval = append(myval, bytes...)
+	}
+
+	dummy := []string{}
+	for i, v := range myval {
+
+		if i == len(myval)-1 {
+
+			break
+		}
+		v = v + 1
+		dummy = append(dummy, string(v))
+
+	}
+
+	return dummy
+}
+func main() {
+
+	arr := []string{"a", "c", "e", "g"}
+
+	missing := Demo(arr)
+	fmt.Println(missing)
+
+}
