@@ -32,3 +32,34 @@ func main() {
 	Demo(arr, 3)
 
 }
+
+
+
+
+
+
+
+
+
+package main
+
+import (
+	"fmt"
+)
+
+func rotateSlice(arr []int, steps int) []int {
+	length := len(arr)
+	steps = steps % length // to handle cases where steps > length
+
+	// Rotate the slice
+	return append(arr[length-steps:], arr[:length-steps]...)
+}
+
+func main() {
+	arr := []int{1, 2, 3, 4, 5, 6, 7}
+
+	for i := 0; i < len(arr); i++ {
+		routes := rotateSlice(arr, i)
+		fmt.Println("routes =", routes)
+	}
+}
