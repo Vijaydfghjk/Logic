@@ -17,6 +17,8 @@ func removeDuplicates(nums []int) int {
 	}
 	
 	fmt.Println(nums[:a])
+        arr = append(arr[:a], arr[a:a]...)
+	fmt.Println("Updated :", arr)
 
 	return a
 }
