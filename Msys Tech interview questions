@@ -35,31 +35,32 @@ func main() {
 
 
 
-
-
-
-
-
+*******Another Essay way**********************
 
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-func rotateSlice(arr []int, steps int) []int {
-	length := len(arr)
-	steps = steps % length // to handle cases where steps > length
+func Demo(arr []int, step int) {
 
-	// Rotate the slice
-	return append(arr[length-steps:], arr[:length-steps]...)
+	k := len(arr)
+	step = k - step
+
+	arr = append(arr[step:], arr[:step]...)
+
+	fmt.Println(arr)
 }
 
 func main() {
-	arr := []int{1, 2, 3, 4, 5, 6, 7}
 
-	for i := 0; i < len(arr); i++ {
-		routes := rotateSlice(arr, i)
-		fmt.Println("routes =", routes)
+	arr := []int{1, 2, 3, 4, 5, 6, 7}
+	for i := 1; i <= 3; i++ {
+		Demo(arr, i)
 	}
 }
+
+
+
+
+
+
