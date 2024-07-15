@@ -1,0 +1,28 @@
+// Own idea for finding the secon largest number and first
+
+// fist the find the maximum number and   else if  checking arr[i] < max  less than of max and (&&) maximum than second
+// storing the second.
+package main
+
+import "fmt"
+
+func main() {
+	arr := []int{7, 79, 80, 8}
+
+	max := 0
+	second := 0
+	for i := 0; i < len(arr); i++ {
+
+		if arr[i] > max {
+			second = max
+			max = arr[i]
+		} else if arr[i] < max && arr[i] > second {
+
+			second = arr[i]
+		}
+
+	}
+
+	fmt.Println("max is ", max)
+	fmt.Println("second max is ", second)
+}
