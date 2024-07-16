@@ -26,3 +26,43 @@ func main() {
 	fmt.Println(get)
 
 }
+**********************
+surfix logic
+
+
+// You can edit this code!
+// Click here and start typing.
+package main
+
+import "fmt"
+
+func demo(strs []string) string {
+
+	p := strs[0]
+	j := len(p) - 1
+	k := 0
+	for _, s := range strs {
+
+		i := len(s) - 1
+
+		for ; i > 0 && j > 0 && s[i] == p[j]; i-- {
+			j--
+			k++
+		}
+		fmt.Println(j)
+
+	}
+	//fmt.Println(k)
+	p = p[k:]
+
+	return p
+}
+
+func main() {
+
+	strs := []string{"viim", "kjhhuyuim", "vikekeim"}
+
+	get := demo(strs)
+	fmt.Println(get)
+
+}
