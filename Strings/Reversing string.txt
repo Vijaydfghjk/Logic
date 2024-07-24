@@ -1,0 +1,47 @@
+// You can edit this code!
+// Click here and start typing.
+package main
+
+import "fmt"
+
+func Demo(a string) {
+
+	k := len(a)
+	b := []byte(a)
+
+	for i := len(b) - 1; i >= 0; i-- {
+
+		b = append(b, b[i])
+
+	}
+
+	fmt.Println("over all", b)
+
+	b = b[k:]
+
+	fmt.Println(string(b))
+
+}
+
+func main() {
+
+	Demo("vijay")
+
+}
+
+
+************************Another way*************************
+
+
+func Demo(a string) {
+
+	c := ""
+	for i := len(a) - 1; i >= 0; i-- {
+
+		c += string(a[i])
+
+	}
+
+	fmt.Println(c)
+
+}

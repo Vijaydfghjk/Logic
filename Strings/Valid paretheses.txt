@@ -1,0 +1,41 @@
+// You can edit this code!
+// Click here and start typing.
+package main
+
+import "fmt"
+
+func isvalid(s string) bool {
+
+	var stak []int32
+
+	own := map[int32]int32{
+
+		')': '(',
+		']': '[',
+		'}': '{',
+	}
+
+	for _, val := range s {
+
+		switch val {
+
+		case '(', '[', '{':
+
+			stak = append(stak, val)
+		case ')', ']', '}':
+			if len(stak) == 0 || stak[len(stak)-1] != own[val] {
+
+				return false
+			}
+			stak = stak[:len(stak)-1]
+		}
+
+	}
+
+	return len(stak) == 0
+}
+func main() {
+
+	value := isvalid("[]")
+	fmt.Println(value)
+}

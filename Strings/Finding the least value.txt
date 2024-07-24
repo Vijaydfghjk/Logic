@@ -1,0 +1,49 @@
+package main
+
+import (
+	"fmt"
+	"strconv"
+)
+
+func Demo(a int) {
+
+	k := strconv.Itoa(a)
+	temp := ""
+	val := ""
+	for i := 0; i < len(k)-1; i++ {
+
+		temp += "0"
+
+	}
+	fmt.Println(temp)
+
+	for i := 0; i < 1; i++ {
+
+		if k[i] >= '0' && k[i] <= '9' {
+
+			val = string(k[i])
+		}
+	}
+
+	fmt.Println(val)
+
+	merge := val + temp
+	//fmt.Println(merge)
+
+	count1, _ := strconv.Atoi(merge)
+
+	updateval, _ := strconv.Atoi(val)
+
+	updateval = updateval - 1
+	myval := strconv.Itoa(updateval)
+	myval = myval + temp
+	count2, _ := strconv.Atoi(myval)
+
+	fmt.Println(count1 - count2)
+
+}
+func main() {
+
+	Demo(878)
+
+}

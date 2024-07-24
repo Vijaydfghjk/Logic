@@ -1,0 +1,36 @@
+package main
+
+import "fmt"
+
+func Demo(a []int) {
+
+	var get chan int = make(chan int)
+	temp := 0
+
+	go func() {
+
+		for i := 0; i < len(a); i++ {
+
+			if a[i] > temp {
+
+				temp = a[i]
+			}
+
+		}
+		get <- temp
+		close(get)
+	}()
+
+	for value := range get {
+
+		fmt.Println(value)
+
+	}
+
+}
+func main() {
+
+	arr := []int{1, 76, 30, 70}
+	Demo(arr)
+
+}

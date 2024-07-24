@@ -1,0 +1,44 @@
+// You can edit this code!
+// Click here and start typing.
+package main
+
+import "fmt"
+
+func Check(s string) bool {
+
+	for start, end := 0, len(s)-1; start < end; start++ {
+
+		if s[start] != s[end] {
+
+			return false
+		}
+		end--
+	}
+	return true
+}
+func main() {
+
+	val := Check("aba")
+	fmt.Println(val)
+
+}
+package main
+
+import (
+	"fmt"
+)
+
+func Check(str string) bool {
+	for start, end := 0, len(str)-1; start < end; start++ {
+		if str[start] != str[end] {
+			return false
+		}
+		end--
+	}
+	return true
+}
+func main() {
+
+	val := Check("aba")
+	fmt.Println(val)
+}
