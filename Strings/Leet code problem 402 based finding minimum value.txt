@@ -1,0 +1,51 @@
+// You can edit this code!
+// Click here and start typing.
+package main
+
+import "fmt"
+
+func removeKdigits(num string, k int) string { //528
+	stack := make([]byte, 0, len(num))
+	
+	
+	//1.key points :num values not sorted menas  inner for loop will do 
+	//2.key points :if it is alreday sorted like 1,2,3  Function part 2 will work. 
+        // Function part 1
+	for i := range num {
+		// 50          56
+		for len(stack) > 0 && k > 0 && stack[len(stack)-1] > num[i] {
+
+			stack = stack[:len(stack)-1]
+			k--
+
+			fmt.Println("loop", stack)
+		}
+
+		stack = append(stack, num[i])
+
+	}
+	// Function part 2
+	for k > 0 {
+		stack = stack[:len(stack)-1]  //49
+		k-- // k=1
+	}
+
+	fmt.Println("check", stack[0])
+	for len(stack) > 0 && stack[0] == '0' {
+		fmt.Println("hello")
+		stack = stack[1:]
+	}
+
+	if len(stack) == 0 {
+		return "0"
+	}
+	return string(stack)
+}
+
+func main() {
+
+	value := removeKdigits("128", 2)
+
+	fmt.Println(value)
+
+}
