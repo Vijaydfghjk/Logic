@@ -39,3 +39,14 @@ func main() {
 	value := isvalid("[]")
 	fmt.Println(value)
 }
+
+
+// Key Notes 
+1.we have to check '(' == ')' yes or no  
+2. stak[len(stak)-1] != own[val]  
+checking (     !=  ( so both are same.
+
+stak = stak[:len(stak)-1] here we are doing the reduce the element size like macking stack size is 0.
+
+3. len(stak) == 0 return true 
+
