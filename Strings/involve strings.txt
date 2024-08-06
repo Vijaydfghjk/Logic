@@ -1,0 +1,74 @@
+package main
+
+import (
+	"fmt"
+	"strconv"
+)
+
+
+
+func Demo(a, b []int) {
+
+	// add := 0
+	stradd := ""
+	stradd2 := ""
+	num1 := 0
+	num2 := 0
+	total := 0
+	temp := [][]int{}
+
+	temp = append(temp, a, b)
+
+	for i := 0; i < len(temp); i++ {
+
+		for j := 0; j < len(temp[i]); j++ {
+
+			if i <= 0 {
+				stradd += strconv.Itoa(temp[i][j])
+				num1, _ = strconv.Atoi(stradd)
+			} else {
+
+				stradd2 += strconv.Itoa(temp[i][j])
+				num2, _ = strconv.Atoi(stradd2)
+			}
+
+		}
+
+	}
+	// fmt.Println(num1)
+	total = num1 + num2
+	collect := strconv.Itoa(total)
+	collect2 := Reverse(collect)
+
+	fmt.Println(collect2)
+}
+
+func Reverse(s string) string {
+	rev := ""
+	for i := len(s) - 1; i >= 0; i-- {
+
+		rev += string(s[i])
+	}
+	return rev
+}
+
+func main() {
+
+	val1 := []int{4, 4, 4, 4}
+
+	val2 := []int{3, 3, 3}
+
+	Demo(val1, val2)
+
+}
+
+/*
+   intpu1 = 4444
+   input2 = 333
+   output = 7774
+
+   explain  4444 + 333 = 4777
+   reverse 4777
+
+*/
+

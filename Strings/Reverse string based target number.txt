@@ -1,0 +1,35 @@
+package main
+
+import "fmt"
+
+func Demo(a string, c int) string {
+
+	b := ""
+	for i := 0; i < c; i++ {
+
+		b += string(a[i])
+	}
+
+	collect := Reverse(b)
+
+	collect += a[c:]
+
+	return collect
+}
+
+func Reverse(c string) string {
+	rev := ""
+	for i := len(c) - 1; 0 <= i; i-- {
+
+		rev += string(c[i])
+	}
+
+	return rev
+}
+func main() {
+
+	value := Demo("ABCDEFGHI", 2)
+
+	fmt.Println(value)
+
+}
