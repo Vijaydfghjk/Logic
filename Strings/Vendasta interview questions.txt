@@ -8,41 +8,33 @@ import (
 	"strconv"
 )
 
-func Demo(a string) {
+func Demo(input string) {
 
-	//runes := []byte(a)
-	tem := []int{}
-	for i := 0; i < len(a); i++ {
+	temp := []int{}
 
-		val, _ := strconv.Atoi(string(a[i]))
-		tem = append(tem, val)
+	for i := 0; i < len(input); i++ {
+
+		val, _ := strconv.Atoi(string(input[i]))
+		temp = append(temp, val)
 	}
-	//fmt.Println(tem)
-	sort.Slice(tem, func(i, j int) bool {
 
-		return a[i] > a[j]
+	sort.Slice(temp, func(i, j int) bool {
+
+		return temp[i] > temp[j]
 	})
 
-	//fmt.Println(tem)
-	k := len(tem) - 1
-	for i := 0; i < len(tem); i++ {
+	temp[len(temp)-2], temp[len(temp)-1] = temp[len(temp)-1], temp[len(temp)-2]
 
-		if tem[k] < tem[k-1] {
+	val := ""
+	for i := 0; i < len(temp); i++ {
 
-			tem[k], tem[k-1] = tem[k-1], tem[k]
-		}
+		val += strconv.Itoa(temp[i])
 	}
 
-	//fmt.Println("final", tem)
-	mystring := ""
-	for i := 0; i < len(tem); i++ {
-
-		value := strconv.Itoa(tem[i])
-		mystring += value
-	}
-	fmt.Println(mystring)
+	fmt.Println(val)
 
 }
+
 func main() {
 
 	input := "47923" // output = 97423
