@@ -61,6 +61,30 @@ func main() {
 
 
 
+**********************************
+
+// You can edit this code!
+// Click here and start typing.
+package main
+
+import "fmt"
+
+func Demo(arr []int) {
+
+	k := arr[len(arr)-1]
+	for i := 1; i <= 3; i++ {
+		arr = append(arr[k-1:], arr[:k-1]...)
+		fmt.Println(arr)
+	}
+}
+
+func main() {
+
+	arr := []int{1, 2, 3, 4, 5, 6, 7}
+
+	Demo(arr)
+
+}
 
 
 
