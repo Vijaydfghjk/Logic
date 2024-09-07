@@ -18,3 +18,23 @@ func searchInsert(nums []int, target int) int {
 	return 0
     
 }
+
+one more way 
+
+unc searchInsert(nums []int, target int) int {
+
+
+    for i := 0; i < len(nums); i++ {
+
+		if nums[i] == target {
+
+			return i
+		} else if target < nums[i] {
+
+			return i
+
+		}
+
+	}
+	return len(nums)
+}
