@@ -1,4 +1,4 @@
- For this assignment, input is an Arraylist containing string elements.
+For this assignment, input is an Arraylist containing string elements.
   Each string element has many pieces of information in it. Each element represents an event.
   Each row will have similar type of data with different values in it. Each string element has many Key-Value pairs.
   Our focus for this assignment is restricted to the following field; every event will have key-value pairs like indicated below
