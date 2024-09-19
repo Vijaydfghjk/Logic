@@ -9,21 +9,23 @@ import (
 
 func Demo(s string) {
 
-//******* Process 01 ***********
-check := []byte(s)
+	// ******* Process 01 ***********
+	check := []byte(s)
 
-sort.Slice(check, func(i, j int) bool {
+	sort.Slice(check, func(i, j int) bool {
 
-return check[i] > check[j]
-})
+		return check[i] > check[j]
+	})
 
-//  //******* Process 02 ***********
-k := len(check) - 1
-if check[k] < check[k-1] {
+	// //******* Process 02 ***********
+	k := len(check) - 1
+	if check[k] < check[k-1] {
 
-check[k], check[k-1] = check[k-1], check[k]
+		check[k], check[k-1] = check[k-1], check[k]
 
 	}
+	fmt.Println(string(check))
+}
 func main() {
 
 	input := "47923" // output = 97423
