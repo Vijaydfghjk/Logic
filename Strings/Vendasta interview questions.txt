@@ -24,7 +24,7 @@ func Demo(s string) {
 		check[k], check[k-1] = check[k-1], check[k]
 
 	}
-//
+
 	fmt.Println(string(check))
 }
 func main() {
