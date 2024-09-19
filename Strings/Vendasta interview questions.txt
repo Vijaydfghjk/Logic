@@ -5,44 +5,25 @@ package main
 import (
 	"fmt"
 	"sort"
-	"strconv"
 )
 
-func Demo(a string) {
+func Demo(s string) {
 
-	//runes := []byte(a)
-	tem := []int{}
-	for i := 0; i < len(a); i++ {
+//******* Process 01 ***********
+check := []byte(s)
 
-		val, _ := strconv.Atoi(string(a[i]))
-		tem = append(tem, val)
+sort.Slice(check, func(i, j int) bool {
+
+return check[i] > check[j]
+})
+
+//  //******* Process 02 ***********
+k := len(check) - 1
+if check[k] < check[k-1] {
+
+check[k], check[k-1] = check[k-1], check[k]
+
 	}
-	//fmt.Println(tem)
-	sort.Slice(tem, func(i, j int) bool {
-
-		return a[i] > a[j]
-	})
-
-	//fmt.Println(tem)
-	k := len(tem) - 1
-	for i := 0; i < len(tem); i++ {
-
-		if tem[k] < tem[k-1] {
-
-			tem[k], tem[k-1] = tem[k-1], tem[k]
-		}
-	}
-
-	//fmt.Println("final", tem)
-	mystring := ""
-	for i := 0; i < len(tem); i++ {
-
-		value := strconv.Itoa(tem[i])
-		mystring += value
-	}
-	fmt.Println(mystring)
-
-}
 func main() {
 
 	input := "47923" // output = 97423
