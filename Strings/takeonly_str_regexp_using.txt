@@ -1,0 +1,21 @@
+package main
+
+import (
+	"fmt"
+	"regexp"
+	"strings"
+)
+
+func Demo(s string) string {
+
+	get := regexp.MustCompile("[a-zA-Z]+")
+
+	letters := get.FindAllString(s, -1)
+
+	return strings.Join(letters, "")
+}
+
+func main() {
+	result := Demo("Vijay23raj") // Should extract "Vijayraj"
+	fmt.Println(result)          // Output: Vijayraj
+}
