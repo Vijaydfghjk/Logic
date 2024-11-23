@@ -1,5 +1,15 @@
 // You can edit this code!
 // Click here and start typing.
+
+Key point : IX
+last is bigger number X and first I minimum number then we to write condition like
+
+bigger > smaller{
+
+
+     sum - smaller
+}
+
 package main
 
 import "fmt"
